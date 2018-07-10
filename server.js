@@ -13,9 +13,13 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/catsController.js");
-app.use(routes);
+var routes = require("./controllers/burger_controllers.js");
+// app.use(routes);
 
 app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT);
+    console.log("\n**** Burger-App now listening at localhost:" + PORT +" ****\n");
 });
+
+app.get("/", function(){
+    console.log("page requested")
+})
