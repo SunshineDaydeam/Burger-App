@@ -1,0 +1,50 @@
+<h1>burgers!</h1>
+
+<h2>burgers that are not eaten!</h2>
+
+<ul>
+  {{!-- {{hbsObject}} --}}
+  {{#each burgers}}
+    {{#unless devoured}} --}}
+      <li>
+        {{name}}
+        {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+            {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+        </button> --}}
+    </li>
+
+{{/unless}}
+  {{/each}}
+</ul>
+
+<h2>burgers that are eaten!</h2>
+
+{{!-- <ul>
+  {{#each burger}}
+    {{#if this.devoured}}
+        <li>
+            {{name}}
+            {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+                {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+            </button> --}}
+        {{!-- </li>
+    {{/if}}
+  {{/each}}
+</ul> --}} --}}
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burger">burgername:</label>
+    <input type="text" id="burger" name="name">
+  </div>
+
+  {{!-- <div class="form-group">
+    <label for="slee">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0"> Awake
+  </div> --}}
+
+  <button type="submit">Add a Burger</button>
+</form>

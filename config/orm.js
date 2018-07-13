@@ -8,12 +8,12 @@ var orm = {
             //If there is an error...
             if (err){throw err;}
             // result = total database
-            console.log(result);
+            // console.log(result);
         })
     },
     //Insert Burger Function
     insertOne:function(){
-        var queryString = "INSERT INTO burgers(burger_name, devoured) VALUES('testicle burger', false);"
+        var queryString = "INSERT INTO burgers(burger_name, devoured) VALUES('test burger', false);"
         connection.query(queryString, function(err, result){
             console.log("** " +result.affectedRows + " Changes have been made **");
             orm.selectAll();

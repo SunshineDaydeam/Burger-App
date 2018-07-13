@@ -14,12 +14,24 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 var routes = require("./controllers/burger_controllers.js");
-// app.use(routes);
+app.use(routes);
+
+//TESTING---------------------------------------
+// app.get('/', function (req, res) {
+//     res.render('index');
+// });
+//TESTING---------------------------------------
+
+
 
 app.listen(PORT, function() {
     console.log("\n**** Burger-App now listening at localhost:" + PORT +" ****\n");
 });
 
-app.get("/", function(){
-    console.log("page requested")
-})
+// app.get("/", function(){
+//     app.get("/", function(req, res) {
+//         res.sendFile(path.join(__dirname, "../public/test.html"));
+//     });
+// })
+
+
