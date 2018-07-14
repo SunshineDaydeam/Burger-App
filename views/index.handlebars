@@ -15,8 +15,8 @@
                       {{#each burger}}
                         {{#unless devoured}}
                           <div class="card mb-3 p-1">
-                            <span><i>{{burger_name}}</i></span>
-                            <span><button class="change-devoured btn-success" data-id="{{id}}" data-buttondevoured="{{devoured}}">
+                            <span><i>{{burger_name}}</i>
+                            <button class="change-devoured btn-info" data-id="{{id}}" data-buttondevoured="{{devoured}}">
                               {{#if devoured}}Put Back!{{else}}EAT!{{/if}}
                             </button></span>
                           </div>
@@ -30,10 +30,12 @@
                         {{#each burger}}
                           {{#if this.devoured}}
                             <div class="card mb-3 p-1">
-                              <span><i>{{burger_name}}</i></span>
-                              <span><button class="change-devoured" data-id="{{id}}" data-buttondevoured="{{devoured}}">
+                              <span><i>{{burger_name}}</i>
+                              <button class="change-devoured btn-info" data-id="{{id}}" data-buttondevoured="{{devoured}}">
                                 {{#if devoured}}Put Back{{else}}EAT!{{/if}}
-                              </button></span>
+                              </button>
+                              {{!-- <button class="delete-burger" data-id="{{id}}">Delete Me</button> --}}
+                              </span>
                             </div>    
                           {{/if}}
                         {{/each}}                       
