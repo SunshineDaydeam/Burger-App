@@ -1,47 +1,56 @@
- <div class="container">
-        <div class="jumbotron mt-3 text-center mb-0">
-            <h1>Eat A Burger?</h1>
-            <form class="create-form">
-              <div class="form-group">
-                <label for="burger">burgername:</label>
-                <input type="text" id="burger-input" name="name">
+<div class="container pb-5">
+
+  <div class="jumbotron mt-3 text-center mb-0">
+
+    <h5>Type the name of a burger you'd like to eat...</h5>
+    <form class="create-form">
+      <div class="form-group">
+        <input type="text" id="burger-input" name="name">
+      </div>
+      <button type="submit" class="btn-info">Add it!</button>
+    </form>
+
+  </div>
+
+    <div class="row mt-3 pt-3 border-top border-dark">
+      <div class="col-6">
+        <div class="card bg-success p-1">
+          <p class="text-center font-weight-bold">Added Burgers</p>
+          {{#each burger}}
+            {{#unless devoured}}
+              <div class="card mb-3 p-1">
+                <span><i>{{burger_name}}</i>
+                  <button class="change-devoured btn-info" data-id="{{id}}" data-buttondevoured="{{devoured}}">
+                  {{#if devoured}}Put Back!{{else}}EAT!{{/if}}
+                  </button>
+                </span>
               </div>
-              <button type="submit">Add a Burger</button>
-            </form>
-            <div class="row mt-3 pt-3 border-top border-dark">
-                <div class="col-6">
-                    <div class="card bg-success p-1">
-                      <p>Added Burgers</p>
-                      {{#each burger}}
-                        {{#unless devoured}}
-                          <div class="card mb-3 p-1">
-                            <span><i>{{burger_name}}</i>
-                            <button class="change-devoured btn-info" data-id="{{id}}" data-buttondevoured="{{devoured}}">
-                              {{#if devoured}}Put Back!{{else}}EAT!{{/if}}
-                            </button></span>
-                          </div>
-                        {{/unless}}
-                      {{/each}}
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card bg-danger p-1">
-                        <p>Consumed Burgers</p>
-                        {{#each burger}}
-                          {{#if this.devoured}}
-                            <div class="card mb-3 p-1">
-                              <span><i>{{burger_name}}</i>
-                              <button class="change-devoured btn-info" data-id="{{id}}" data-buttondevoured="{{devoured}}">
-                                {{#if devoured}}Put Back{{else}}EAT!{{/if}}
-                              </button>
-                              {{!-- <button class="delete-burger" data-id="{{id}}">Delete Me</button> --}}
-                              </span>
-                            </div>    
-                          {{/if}}
-                        {{/each}}                       
-                    </div>
-                </div>
-            </div>
+            {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card bg-danger p-1">
+          <p class="text-center font-weight-bold">Consumed Burgers</p>
+          {{#each burger}}
+            {{#if this.devoured}}
+              <div class="card mb-3 p-1">
+                <span><i>{{burger_name}}</i>
+                  <button class="change-devoured btn-info" data-id="{{id}}" data-buttondevoured="{{devoured}}">
+                    {{#if devoured}}Put Back{{else}}EAT!{{/if}}
+                  </button>
+                      {{!-- <button class="delete-burger" data-id="{{id}}">Delete Me</button> --}}
+                </span>
+              </div>    
+            {{/if}}
+          {{/each}}                       
+        </div>
+      </div>
     </div>
-        <a href="https://github.com/SunshineDaydeam/Burger-App" class="mt-0 pt-0">Github Repo</a>
+</div>
+
+<div class="footer text-center mt-5 pt-3">
+ <p class="mb-0 pb-0">This Page was created by Alex Bruner and hosted on Heroku...</p>
+ <p class="mt-0 pt-0">Copyright 2018</p> </div>
 
