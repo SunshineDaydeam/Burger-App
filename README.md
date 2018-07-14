@@ -21,7 +21,7 @@ This App uses mySQL, express, handlebars, body-parser, html, javascript, and css
 
 
 ## Heroku Hosting
-- App is hosted live 
+- App is hosted live at https://burger-app-.herokuapp.com/
 	
 ## The App Itself
 
