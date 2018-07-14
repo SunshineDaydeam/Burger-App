@@ -1,50 +1,45 @@
-<h1>burgers!</h1>
+ <div class="container">
+        <div class="jumbotron mt-3 text-center mb-0">
+            <h1>Eat A Burger?</h1>
+            <form class="create-form">
+              <div class="form-group">
+                <label for="burger">burgername:</label>
+                <input type="text" id="burger-input" name="name">
+              </div>
+              <button type="submit">Add a Burger</button>
+            </form>
+            <div class="row mt-3 pt-3 border-top border-dark">
+                <div class="col-6">
+                    <div class="card bg-success p-1">
+                      <p>Added Burgers</p>
+                      {{#each burger}}
+                        {{#unless devoured}}
+                          <div class="card mb-3 p-1">
+                            <span><i>{{burger_name}}</i></span>
+                            <span><button class="change-devoured btn-success" data-id="{{id}}" data-buttondevoured="{{devoured}}">
+                              {{#if devoured}}Put Back!{{else}}EAT!{{/if}}
+                            </button></span>
+                          </div>
+                        {{/unless}}
+                      {{/each}}
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card bg-danger p-1">
+                        <p>Consumed Burgers</p>
+                        {{#each burger}}
+                          {{#if this.devoured}}
+                            <div class="card mb-3 p-1">
+                              <span><i>{{burger_name}}</i></span>
+                              <span><button class="change-devoured" data-id="{{id}}" data-buttondevoured="{{devoured}}">
+                                {{#if devoured}}Put Back{{else}}EAT!{{/if}}
+                              </button></span>
+                            </div>    
+                          {{/if}}
+                        {{/each}}                       
+                    </div>
+                </div>
+            </div>
+    </div>
+        <a href="https://github.com/SunshineDaydeam/Burger-App" class="mt-0 pt-0">Github Repo</a>
 
-<h2>burgers that are not eaten!</h2>
-
-<ul>
-  {{!-- {{hbsObject}} --}}
-  {{#each burgers}}
-    {{#unless devoured}} --}}
-      <li>
-        {{name}}
-        {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-            {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-        </button> --}}
-    </li>
-
-{{/unless}}
-  {{/each}}
-</ul>
-
-<h2>burgers that are eaten!</h2>
-
-{{!-- <ul>
-  {{#each burger}}
-    {{#if this.devoured}}
-        <li>
-            {{name}}
-            {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-                {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-            </button> --}}
-        {{!-- </li>
-    {{/if}}
-  {{/each}}
-</ul> --}} --}}
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">burgername:</label>
-    <input type="text" id="burger" name="name">
-  </div>
-
-  {{!-- <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
-
-  <button type="submit">Add a Burger</button>
-</form>
